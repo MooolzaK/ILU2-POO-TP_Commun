@@ -3,13 +3,16 @@ package model;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import model.CalendrierAnnuel;
+
 class CalendrierAnnuelTest {
-	static CalendrierAnnuel calendrier;
+	CalendrierAnnuel calendrier;
 	
-	@BeforeAll
-	static void setUpBeforeClass() {
+	@BeforeEach
+	void setUpBeforeClass() {
 		calendrier = new CalendrierAnnuel();
 	}
 
@@ -29,5 +32,5 @@ class CalendrierAnnuelTest {
 		assertFalse(calendrier.estLibre(20,10), "20/10 devrait être occuper");
 		assertFalse(calendrier.reserver(20,10), "reservation du 20/10 ne devrait pas être possible");
 	}
-
+	
 }
